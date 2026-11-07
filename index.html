@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ROCKET LAB · Flight Simulation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/simulator.css">
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">R</span><span>ROCKET<span class="muted">LAB</span><small>FLIGHT SIMULATION SYSTEM</small></span></a><div class="mission"><span class="live-dot"></span> SIMULATION SESSION <b>NRH-03</b></div><a class="back-link" href="index.html">← OVERVIEW</a></header>
+<main>
+<section class="intro"><div><div class="eyebrow">MISSION CONTROL / 001</div><h1>STAGE <em>SEPARATION</em></h1><p>로켓의 상승과 단 분리 과정을 직접 조작하고 관찰하세요.</p></div><div class="mission-chip"><span>MISSION</span><b>ORBIT INSERTION</b><small>EDUCATIONAL MODEL · NOT TO SCALE</small></div></section>
+<section class="workspace">
+<div class="viewport-card"><div class="viewport-head"><span><i></i> LIVE 3D VIEW</span><span id="viewStatus">READY · PAD</span></div><div id="scene" aria-label="3D 로켓 시뮬레이션 화면"></div><div class="view-bottom"><span>DRAG ROTATE <b>·</b> SCROLL ZOOM</span><span id="altitude">ALTITUDE&nbsp; 000 KM</span></div><div class="view-crosshair">+</div></div>
+<aside class="control-panel"><div class="panel-head"><div><span class="eyebrow">FLIGHT DIRECTOR</span><h2>MISSION CONTROL</h2></div><span class="status-pill" id="statusPill">STANDBY</span></div>
+<div class="telemetry"><div><span>FLIGHT TIME</span><b id="flightTime">T+ 00:00</b></div><div><span>VELOCITY</span><b id="velocity">0.0 <small>KM/S</small></b></div><div><span>ALTITUDE</span><b id="altitudeRead">0 <small>KM</small></b></div></div>
+<div class="primary-actions"><button class="btn-launch" id="launchBtn"><span>▶</span> LAUNCH SEQUENCE</button><div class="button-row"><button class="btn" id="pauseBtn">Ⅱ PAUSE</button><button class="btn" id="replayBtn">↻ REPLAY</button></div></div>
+<div class="section-label">STAGE SEPARATION <span>MANUAL OVERRIDE</span></div>
+<div class="stage-list"><button class="stage-control" data-stage="1"><span class="stage-no">01</span><span class="stage-copy"><b>FIRST STAGE</b><small>1단 엔진부 분리</small></span><span class="stage-state" id="stageState1">ATTACHED</span></button><button class="stage-control" data-stage="2"><span class="stage-no">02</span><span class="stage-copy"><b>SECOND STAGE</b><small>2단 추진부 분리</small></span><span class="stage-state" id="stageState2">ATTACHED</span></button><button class="stage-control" data-stage="3"><span class="stage-no">03</span><span class="stage-copy"><b>FAIRING</b><small>페어링 분리</small></span><span class="stage-state" id="stageState3">ATTACHED</span></button></div>
+<div class="section-label">SIMULATION RATE <span id="speedLabel">1.0×</span></div><input id="speed" class="speed-slider" type="range" min="0.25" max="3" step="0.25" value="1">
+<div class="bottom-actions"><button class="btn-reset" id="resetBtn">↺ RESET MISSION</button><p>※ 교육용 개념 모델입니다. 실제 나로호의 형상·궤적·추진 성능을 재현하지 않습니다.</p></div></aside>
+</section>
+<footer><span>ROCKET LAB <b>—</b> INTERACTIVE SPACE SYSTEM</span><span>THREE-DIMENSIONAL CONCEPT SIMULATION <b>v2.0</b></span></footer>
+</main></div>
+<script type="module" src="js/simulator.js"></script>
+</body></html>
